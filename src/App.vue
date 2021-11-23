@@ -13,6 +13,10 @@
         <option value="low_cost">Mais baratos</option>
         <option value="high_cost">Mais caros</option>
       </select>
+
+      <div class="filter-total">
+        <span>{{ filteredTotal }} resultado(s)</span>
+      </div>
     </section>
 
     <CardList :properties="filteredProperties" />
@@ -22,7 +26,6 @@
 <script>
 import Header from "./components/Header.vue";
 import CardList from "./components/CardList.vue";
-
 import axios from "axios";
 
 export default {
@@ -67,6 +70,9 @@ export default {
         );
       });
       return items;
+    },
+    filteredTotal() {
+      return this.filteredProperties.length;
     },
   },
   watch: {
@@ -158,6 +164,14 @@ html {
 }
 
 .filter-price {
+}
+
+.filter-total {
+  font-weight: 500;
+  font-size: 1.2rem;
+  align-self: flex-end;
+  margin-left: auto;
+  
 }
 
 @media (min-width: 600px) {
