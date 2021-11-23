@@ -122,6 +122,7 @@ export default {
   width: 100%;
   text-align: center;
   font-weight: 400;
+  text-shadow: 0px 2px rgba(0, 0, 0, 0.1);
 }
 
 .item-cta:hover {

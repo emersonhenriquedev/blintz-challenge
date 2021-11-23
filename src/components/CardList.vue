@@ -4,7 +4,6 @@
       v-for="(property, index) in properties"
       :key="index"
       :property="property"
-      :imgIndex="index"
     >
     </Card>
   </section>
@@ -31,17 +30,21 @@ export default {
 <style scoped>
 .properties {
   display: flex;
-  /* padding: 1rem; */
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   gap: 1rem;
+
+  height: 517px;
+  height: 80vh;
+  overflow-y: scroll;
+  margin-top: 1.5rem;
 }
 
 @media (min-width: 600px) {
   .properties {
     flex-direction: row;
     flex-wrap: wrap;
+    justify-content: center;
   }
 }
 </style>
